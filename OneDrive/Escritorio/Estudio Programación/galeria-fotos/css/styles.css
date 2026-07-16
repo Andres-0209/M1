@@ -1,0 +1,218 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* TODO: Configura el html */
+.html {
+  /* font-size debe ser 100% para accesibilidad */
+    font-size: 100%;
+}
+
+/* TODO: Estilos base del body */
+.body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    line-height: 1.5;
+    color: rgb(11, 11, 11);
+    background-color: #1aa1c3b0;
+    
+}
+/* TODO: Define variables usando HSL */
+:root {
+    --color-principal: hsl(210,805,40%);
+    --color-principal-hover: hsl(210,80%,30%)
+    --color fondo: hsl(210,20%,98%);
+    --color-tarjeta: hsla(186, 87%, 60%, 0.652);
+    --color-texto: hsl(0, 0%, 0%);
+    --color-texto-secundario: hsl(209, 63%, 74%);
+    
+}
+
+/* ==========================================================================
+    DOCUMENTACIÓN DE INVESTIGACIÓN SOBRE HSL
+    ==========================================================================
+¿Qué significa H, S, L?
+H (Hue / Tono): El color base medido en grados (0-360) en la rueda cromática.
+
+S (Saturation / Saturación): La intensidad del color en porcentaje (0% gris, 100% color vivo).
+L (Lightness / Luminosidad): La claridad en porcentaje (0% negro, 50% equilibrado, 100% blanco).
+
+¿Por qué HSL es útil? (Razones):
+
+Es intuitivo para los humanos: Es más fácil aclarar un color subiendo la Luminosidad (L) 
+que adivinar combinaciones matemáticas en HEX o RGB.
+Facilidad para crear paletas: Permite generar variaciones armónicas consistentes 
+cambiando un solo parámetro del mismo Hue (Tono).
+
+Ejemplo práctico:
+Crear estados dinámicos como `:hover`. Si el fondo es hsl(210, 80%, 50%), su versión 
+oscura para el hover se logra simplemente bajando la luminosidad a hsl(210, 80%, 40%).
+========================================================================== */
+
+/* TODO: Estiliza el header usando Flexbox */
+.header {
+  /* background-color usando variable */
+    background-color: rgba(29, 178, 232, 0.866);
+  /* padding usando rem */
+    padding:1rem;
+  /* box-shadow sutil */
+    box-shadow: rgb(101, 176, 205);
+}
+
+.header-contenido {
+  /* max-width para limitar ancho */
+    max-width: 1200px;
+  /* margin: 0 auto para centrar */
+    margin: auto;
+  /* padding usando rem */
+    padding: 1.5rem;
+  /* text-align: center */
+    text-align: center;
+}
+
+.titulo-principal {
+  /* font-size usando rem (2.5rem - 3rem) */
+    font: size 2.5rem, 3rem ;
+  /* margin-bottom usando rem */
+    margin-bottom: 1rem;
+  /* color usando variable HSL */
+    --color-primario: hsl(210, 72%, 60%);
+}
+
+.descripcion {
+  /* font-size usando rem */
+    font-size: 2rem;
+  /* color más claro para contraste */
+    color:rgb(0, 0, 0);
+}
+
+.contenedor {
+  /* max-width usando rem */
+    max-width: 88rem;
+  /* margin: 0 auto */
+    margin: auto;
+  /* padding usando rem */
+    padding: 5rem;
+}
+
+.galeria {
+  /* display: grid */
+    display: grid;
+  /* grid-template-columns: 3 columnas iguales con repeat() */
+    grid-template-columns: 350px 350px 350px;
+  /* gap entre tarjetas */
+    gap: 100px;
+}
+
+
+/* TODO: Estiliza las tarjetas */
+.foto-tarjeta {
+  /* background-color */
+    background-color: rgb(160, 223, 232);
+  /* border-radius */
+    border-radius: 15px;
+  /* box-shadow */
+    box-shadow: white;
+    overflow: hidden;
+  /* overflow: hidden para esquinas redondeadas de imagen */
+    /*IMPORTANTE preguntar por que el overflow quita las fotos*/
+  /* transition para hover */
+    transition: all ;
+}
+
+.foto-tarjeta img {
+  /* width: 100% */
+    width: 100%;
+  /* height: 250px */
+    height: 350px;
+  /* object-fit: cover */
+    object-fit: cover;
+  /* display: block */
+    display: block;
+}
+
+.foto-info {
+  /* padding usando rem */
+    padding: 1rem;
+}
+
+.foto-titulo {
+  /* font-size usando rem */
+    font-size: 2.5rem;
+  /* margin-bottom */
+    margin-bottom: auto;
+  /* color usando variable */
+    color:rgb(255, 255, 255)
+}
+
+.foto-descripcion {
+  /* font-size usando rem */
+    font-size: 1.5rem;
+  /* color más claro */
+    color: rgb(228, 255, 228);
+  /* margin: 0 */
+    margin: 0; 
+}
+
+/* TODO: Efecto hover */
+.foto-tarjeta:hover {
+  /* transform: translateY(-4px) */
+    transform: translate(5px);
+  /* box-shadow más pronunciada */
+    box-shadow: #003cff;
+}
+
+/* TODO: Estiliza el footer */
+.footer {
+  /* 1. Definición de las variables (es buena práctica ponerlas al inicio de la regla) */
+--color-oscuro: hsl(197, 100%, 50%);
+--color-claro: hsl(228, 100%, 22%);
+
+  /* 2. Aplicamos el fondo con la sintaxis correcta */
+background-color: var(--color-oscuro);
+
+  /* 3. Aplicamos el color claro al texto */
+color: var(--color-claro);
+
+  /* 4. Corregimos el error tipográfico */
+text-align: center;
+
+  /* padding usando rem */
+    padding: 1rem;
+
+  /* margin-top usando rem */
+    margin-top: 1rem;
+}
+
+/* TODO: Tablets - 2 columnas */
+@media (max-width: 768px) {
+    .galeria {
+    /* grid-template-columns: 2 columnas */
+    grid-template-columns: 2;
+    }
+
+    .titulo-principal {
+    /* font-size más pequeño */
+    font-size: 1rem;
+}
+}
+
+/* TODO: Móviles - 1 columna */
+@media (max-width: 480px) {
+    .galeria {
+    /* grid-template-columns: 1 columna */
+    grid-template-columns: 1;
+}
+
+    .titulo-principal {
+    /* font-size aún más pequeño */
+    font-size: 1rem;
+}
+
+    .contenedor {
+    /* padding reducido */
+    padding: 1rem;
+}
+}
