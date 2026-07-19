@@ -75,3 +75,9 @@ console.log(Tareas[i]);
 ))
 
 //Invertigar que hace la función flecha
+
+//Ejercicio 6 · Math.random y Math.floor
+let  IndiceAleatorio = Math.floor(Math.random()* Tareas.length)
+console.log(IndiceAleatorio)
+console.log (Tareas[IndiceAleatorio])
+//Preguntar en la clase sobre el math.ramdom y math.florr no los entendio del todo
