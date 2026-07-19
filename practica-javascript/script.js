@@ -1,7 +1,7 @@
 console.log("Javascrip conectado correctamente")
 
 //Ejercicio 1 · Variables
-de la L4
+
 const Nombredeusuario ="Julian Rodriguez"
 console.log("Nombre de usuario registrado es", Nombredeusuario )
 let Contadormensajes = 0
